@@ -24,17 +24,27 @@ def getAllFiles(path, recursive=True, types=[], excludeDir=[]):
 
     return files
 
+def valDate(dt):
+    ct =  datetime.datetime.now().strftime("%Y%m%d")
+    if dt != None:
+        nt =  dt.strftime("%Y%m%d")
+        if nt > ct:
+            dt = None
+    return dt
+
 def getImageDate(img):
     dt = None
     try:
         dsting=Image.open(img)._getexif()[36867]
         dt = datetime.datetime.strptime(dsting, "%Y:%m:%d %H:%M:%S").date()
+        dt = valDate(dt)
     except:
         pass
 
     if dt == None:
         dt = datetime.datetime.fromtimestamp(os.path.getmtime(img))
 
+    dt = valDate(dt)
     return dt
 
 def getVideoDate(img):
@@ -44,4 +54,5 @@ def getVideoDate(img):
     except:
         pass
 
+    dt = valDate(dt)
     return dt

@@ -74,7 +74,7 @@ class MainForm ( wx.Frame ):
         self.cbMove.SetValue(True)
         gSizer3.Add( self.cbMove, 0, wx.ALL, 5 )
 
-        self.cbOverwrite = wx.CheckBox( sbSizer3.GetStaticBox(), wx.ID_ANY, u"Overwrite if Already Exists", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.cbOverwrite = wx.CheckBox( sbSizer3.GetStaticBox(), wx.ID_ANY, u"Overwrite if Already Exists!", wx.DefaultPosition, wx.DefaultSize, 0 )
         gSizer3.Add( self.cbOverwrite, 0, wx.ALL, 5 )
 
 

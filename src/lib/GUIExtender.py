@@ -20,6 +20,7 @@ class Options(diaOptions):
         self.dpickImgDest.SetPath(parent.ImageRootDir)
         self.dpickVideos.SetPath(parent.VideoRootDir)
         self.dpickDup.SetPath(parent.GarbageRootDir)
+        self.txtExcDirs.SetValue(parent.ExcludeDirList)
         self.txtDirFormat.SetValue(parent.DestDirFormat)
 
         self.parent = parent
